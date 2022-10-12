@@ -42,6 +42,35 @@
        </div>
     </div>
            
-<script src="praddep.js"></script>
+<script >
+function saveToLocalStorage(event){
+    event.preventDefault();
+    let msg = event.target.username.value ;
+    let name = event.target.emailId.value ; 
+    let phonenumber = event.target.phonenumber.value ; 
+    localStorage.setItem('name' , name);
+    localStorage.setItem('email' , email);
+    localStorage.setItem('phonenumber' , phonenumber);
+const obj = {
+    name ,
+    email,
+    phonenumber ,
+}
+localStorage.setItems('userDetails' , obj);
+}
+
+let myobj = {
+name : "Dom",
+age : 22
+};
+let myobj_serialized = JSON.stringify(myobj);
+
+
+localStorage.setItem('myobj', myobj);
+
+let myobj_deserialized =(localStorage.getItem('myobj'));
+
+console.log(myobj_deserialized);
+</script>
 </body>
 </html>
